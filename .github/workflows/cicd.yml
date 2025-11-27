@@ -34,7 +34,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_PAT }}
-          repository: seongje00416/argocd-helm
+          repository: MegazoneCloud/argocd-helm
       - name: Update image tag and push
         run: |
           sed -i "s|image: seongje00416/todo-backend:.*|image: seongje00416/todo-backend:${{ github.sha }}|g" k8s/deployment.yaml
